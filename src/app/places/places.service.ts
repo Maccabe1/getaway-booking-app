@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Place } from './place.model';
-import { partitionArray } from '@angular/compiler/src/util';
 
 @Injectable({
   providedIn: 'root'
