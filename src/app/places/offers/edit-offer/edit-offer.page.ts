@@ -40,4 +40,11 @@ export class EditOfferPage implements OnInit {
         });
       });
     }
+
+    onUpdateOffer() {
+      if(!this.form.valid) {
+        return;
+      }
+      console.log(this.form);
+    } 
   }
