@@ -47,8 +47,8 @@
         <ion-datetime 
         display-format="DD MMM YYYY" 
         picker-format="DD MM YY" 
-        [min]="" 
-        [max]="" 
+        [min]="selectedPlace.availableFrom" 
+        [max]="selectedPlace.availableTo" 
         ngModel 
         name="date-from" 
         required
@@ -64,7 +64,7 @@
         display-format="DD MMM YYYY" 
         picker-format="DD MM YY" 
         [min]="startDateCtrl.value" 
-        [max]="" 
+        [max]="selectedPlace.availableTo" 
         ngmodel 
         name="date-to" 
         required></ion-datetime>
