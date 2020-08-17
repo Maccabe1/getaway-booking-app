@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Place } from './place.model';
+import { AuthService } from '../auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -42,10 +43,24 @@ export class PlacesService {
     return [...this._places];
   }
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   getPlace(id: string) {
     return {...this._places.find(
       p=> p.id === id)}; 
+  }
+
+  addPlace(title: string, description: string, price: number, dateFrom: Date, dateTo: Date ) {
+    const newPlace = new Place(
+      Math.random().toString(), 
+      title,
+      description, 
+      'https://www.thetimes.co.uk/imageserver/image/%2Fmethode%2Ftimes%2Fprod%2Fweb%2Fbin%2Fe6a154d6-9926-11ea-aaba-2417e5fa83dd.jpg?crop=5682%2C3196%2C36%2C545&resize=1180', 
+      price, 
+      dateFrom, 
+      dateTo, 
+      this.authService.userId
+    );
+    this._places.push(newPlace);
   }
 }
