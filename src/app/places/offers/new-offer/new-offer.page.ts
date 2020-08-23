@@ -47,7 +47,7 @@ export class NewOfferPage implements OnInit {
     this.placesService.addPlace(
       this.form.value.title, 
       this.form.value.description, 
-      +this.form.value.price, 
+      this.form.value.price, 
       new Date(this.form.value.dateFrom), 
       new Date(this.form.value.dateTo)
       );
