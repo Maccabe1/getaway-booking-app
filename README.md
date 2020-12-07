@@ -1,3 +1,3 @@
-# getaway-booking-app
+# Getaway Booking App
 
-ionic app
+A holiday booking application built with Ionic and Angular
